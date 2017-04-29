@@ -9,6 +9,8 @@
 
 @"%ZIPFOLDER%\7z.exe" a "%BKPFOLDER%\%BKPNAME%" "%SOURCEFOLDER%"
 
+@timeout /t 5
+
 (
 echo user %FTPUSER% %FTPPASS%
 echo binary
