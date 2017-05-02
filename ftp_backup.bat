@@ -11,11 +11,4 @@
 
 @timeout /t 5
 
-(
-echo user %FTPUSER% %FTPPASS%
-echo binary
-echo put "%BKPFOLDER%\%BKPNAME%"
-echo quit
-)>push.txt
-ftp -s:push.txt -n %FTPADDRESS%
-del push.txt /q >nul
+@ncftpput -u %FTPUSER% -p "%FTPPASS%"  %FTPADDRESS% / "%BKPFOLDER%\%BKPNAME%"
